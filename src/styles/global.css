@@ -1,0 +1,241 @@
+/* ------------------------------------------------------------------
+ * Console tokens. Every theme swaps the same set of variables; components
+ * only ever read tokens, so a new theme is one block below.
+ * ------------------------------------------------------------------ */
+
+:root {
+  color-scheme: dark;
+
+  --bg-top: #0e63c9;
+  --bg-mid: #063a8c;
+  --bg-bottom: #01153f;
+  --wave: 150, 205, 255;
+  --accent: #4aa3ff;
+
+  --panel: rgba(4, 18, 52, 0.42);
+  --panel-strong: rgba(3, 13, 38, 0.72);
+  --panel-hover: rgba(255, 255, 255, 0.1);
+  --line: rgba(255, 255, 255, 0.16);
+  --line-strong: rgba(255, 255, 255, 0.32);
+
+  --text: #ffffff;
+  --text-dim: rgba(255, 255, 255, 0.74);
+  --text-faint: rgba(255, 255, 255, 0.5);
+
+  --focus-ring: 0 0 0 3px #fff, 0 0 26px 4px rgba(var(--wave), 0.55);
+
+  --live: #4ade80;
+  --progress: #fbbf24;
+  --platinum: #c9d6ea;
+  --gold: #e8b931;
+  --silver: #b9c2cc;
+  --bronze: #c98a4b;
+
+  --font: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+  --ease: cubic-bezier(0.22, 0.8, 0.24, 1);
+  --gutter: clamp(16px, 5vw, 72px);
+}
+
+:root[data-theme='midnight'] {
+  --bg-top: #1b1f2a;
+  --bg-mid: #0c0f16;
+  --bg-bottom: #000000;
+  --wave: 170, 180, 200;
+  --accent: #9fb2d6;
+  --panel: rgba(255, 255, 255, 0.05);
+  --panel-strong: rgba(0, 0, 0, 0.6);
+}
+
+:root[data-theme='purple'] {
+  --bg-top: #6a2fc0;
+  --bg-mid: #3a1477;
+  --bg-bottom: #12052e;
+  --wave: 214, 170, 255;
+  --accent: #c08cff;
+  --panel: rgba(30, 6, 60, 0.42);
+  --panel-strong: rgba(18, 4, 38, 0.72);
+}
+
+:root[data-theme='crimson'] {
+  --bg-top: #b4232f;
+  --bg-mid: #6b0e1e;
+  --bg-bottom: #24030a;
+  --wave: 255, 170, 170;
+  --accent: #ff8a8a;
+  --panel: rgba(50, 4, 12, 0.42);
+  --panel-strong: rgba(30, 2, 8, 0.72);
+}
+
+:root[data-theme='emerald'] {
+  --bg-top: #0f8a6a;
+  --bg-mid: #075143;
+  --bg-bottom: #021a17;
+  --wave: 150, 255, 215;
+  --accent: #5fe3b6;
+  --panel: rgba(2, 40, 32, 0.42);
+  --panel-strong: rgba(1, 24, 20, 0.72);
+}
+
+/* ── Base ─────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg-bottom);
+  color: var(--text);
+  font-family: var(--font);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+#app {
+  height: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: none;
+}
+
+::selection {
+  background: rgba(var(--wave), 0.4);
+}
+
+/* ── Shared console primitives ───────────────────────────────────── */
+
+/* Everything that the controller can land on uses this ring. */
+.focusable {
+  transition:
+    transform 0.22s var(--ease),
+    box-shadow 0.22s var(--ease),
+    background 0.22s var(--ease),
+    opacity 0.22s var(--ease);
+}
+
+.is-focused {
+  box-shadow: var(--focus-ring);
+  animation: focus-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes focus-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px #fff, 0 0 22px 2px rgba(var(--wave), 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 3px #fff, 0 0 34px 8px rgba(var(--wave), 0.7);
+  }
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 13px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--live);
+  box-shadow: 0 0 8px var(--live);
+}
+
+.status-dot--in-progress {
+  background: var(--progress);
+  box-shadow: 0 0 8px var(--progress);
+}
+
+.scroll-area {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Screen-to-screen transition, like the console's soft cross-fade. */
+.screen-enter-active,
+.screen-leave-active {
+  transition:
+    opacity 0.28s var(--ease),
+    transform 0.28s var(--ease);
+}
+.screen-enter-from {
+  opacity: 0;
+  transform: scale(1.03);
+}
+.screen-leave-to {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.35s var(--ease);
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

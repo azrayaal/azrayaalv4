@@ -31,7 +31,7 @@ Mouse dan sentuhan juga bisa dipakai: klik tile sekali untuk memilih, klik lagi 
 | Tile game | Project unggulan → halaman project ala game hub | `/project/:slug` |
 | Library | Semua project, difilter per kategori | `/library` |
 | Trophies | Skill sebagai trophy (platinum/gold/silver/bronze sesuai level) | `/trophies` |
-| Profile | Bio, career (timeline kerja), statistik, pendidikan | `/profile` |
+| Profile | Bio, career (timeline kerja), statistik, pendidikan | `/profile?tab=career` (about · career · stats · education) |
 | Friends | GitHub, LinkedIn, email, WhatsApp | `/friends` |
 | Messages | Kirim pesan lewat mailto / WhatsApp | `/messages` |
 | Notifications | Ketersediaan, project terbaru, resume | `/notifications` |

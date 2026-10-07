@@ -1,0 +1,538 @@
+import type { Project } from '@/types';
+import { media } from './portfolio';
+
+/**
+ * Media is derived from the slug so a project only has to declare its content.
+ * Swap `media()` for real screenshot URLs (or a CMS asset field) when you have them.
+ */
+const cover = (slug: string) => media(`${slug}-cover`, 2000, 1000);
+const thumb = (slug: string) => media(`${slug}-thumb`, 1200, 800);
+
+export const projects: Project[] = [
+  {
+    id: 'prj-01',
+    slug: 'sarga-main',
+    title: 'Sarga',
+    shortDescription:
+      'The main corporate site for the Sarga group — company profile, services, and the entry point to every sub-brand.',
+    description:
+      'Sarga is the parent corporate website tying the group’s sub-brands together. I worked across the stack: the marketing front end, the content and enquiry APIs behind it, and the deployment pipeline on Vercel. The site is the first thing a prospective partner sees, so the priorities were fast first paint, clean typography, and content that a non-engineer can update without a release.',
+    thumbnail: '/projects/sarga_thumbnail.png',
+    contentImage: ['/projects/sarga.png', '/projects/sarga2.png', '/projects/sarga3.png', '/projects/sarga4.png'],
+    coverImage: '/projects/sarga.png',
+    category: 'Corporate Website',
+    status: 'in-progress',
+    featured: true,
+    featuredOrder: 7,
+    year: '2026',
+    role: 'Fullstack Developer',
+    duration: '2026',
+    teamSize: 4,
+    techStack: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Node.js',
+      'Express',
+      'PostgreSQL',
+      'Prisma',
+      'Vercel',
+    ],
+    tags: ['corporate', 'fullstack', 'marketing'],
+    links: { website: 'https://sarga-jade.vercel.app/' },
+    color: 'brand',
+  },
+  {
+    id: 'prj-02',
+    slug: 'sarga-horse-racing',
+    title: 'Sarga Horse Racing',
+    shortDescription:
+      'A brand site for the group’s horse racing arm, built on the shared Sarga front-end foundation.',
+    description:
+      'One of the Sarga sub-brand sites. It reuses the component foundation from the main site, which means a change to a shared primitive lands everywhere at once instead of being reimplemented per brand. My work covered the front end: layout, motion, responsive behaviour, and the content structure the marketing team edits.',
+    thumbnail: '/projects/sarga_horse.png',
+    contentImage: ["/projects/sarga_horse.png", "/projects/sarga_horse2.png", "/projects/sarga_horse4.png"],
+    coverImage: "/projects/sarga_horse.png",
+    category: 'Corporate Website',
+    status: 'in-progress',
+    featured: false,
+    featuredOrder: 2,
+    year: '2026',
+    role: 'Frontend Developer',
+    duration: '2026',
+    teamSize: 3,
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    tags: ['corporate', 'frontend', 'brand'],
+    links: { website: 'https://sarga-horse.vercel.app/' },
+    color: 'orange',
+  },
+  {
+    id: 'prj-03',
+    slug: 'sarga-motorsport',
+    title: 'Sarga Motorsport',
+    shortDescription:
+      'The motorsport brand site — a second surface on the same shared component foundation.',
+    description:
+      'The motorsport counterpart to the horse racing site. Same foundation, different identity: the shared primitives carry the structure while the brand layer changes the typography, imagery, and motion. Building the two in parallel is what proved the shared foundation was worth having.',
+    thumbnail: '/projects/sarga_motorsport.png',
+    contentImage: ['/projects/sarga_motorsport.png', '/projects/sarga_motorsport2.png', '/projects/sarga_motorsport3.png'],
+    coverImage: '/projects/sarga_motorsport.png',
+    category: 'Corporate Website',
+    status: 'in-progress',
+    featured: false,
+    featuredOrder: 3,
+    year: '2026',
+    role: 'Frontend Developer',
+    duration: '2026',
+    teamSize: 3,
+    techStack: ['React', 'TypeScript', 'Tailwind CSS'],
+    tags: ['corporate', 'frontend', 'brand'],
+    links: { website: 'https://sarga-motorsport.vercel.app/' },
+    color: 'pink',
+  },
+  {
+    id: 'prj-04',
+    slug: 'sarga-rally',
+    title: 'Sarga Rally',
+    shortDescription:
+      'The motorsport brand site — a second surface on the same shared component foundation.',
+    description:
+      'The motorsport counterpart to the horse racing site. Same foundation, different identity: the shared primitives carry the structure while the brand layer changes the typography, imagery, and motion. Building the two in parallel is what proved the shared foundation was worth having.',
+    thumbnail: '/projects/sarga_rally.png',
+    contentImage: ['/projects/sarga_rally.png', '/projects/sarga_rally2.png', '/projects/sarga_rally3.png', '/projects/sarga_rally4.png'],
+    coverImage: '/projects/sarga_rally.png',
+    category: 'Corporate Website',
+    status: 'in-progress',
+    featured: false,
+    featuredOrder: 4,
+    year: '2026',
+    role: 'Frontend Developer',
+    duration: '2026',
+    teamSize: 3,
+    techStack: ['React', 'TypeScript', 'Tailwind CSS'],
+    tags: ['corporate', 'frontend', 'brand'],
+    links: { website: 'https://sarga-motorsport.vercel.app/' },
+    color: 'pink',
+  },
+  {
+    id: 'prj-04b',
+    slug: 'fif-affiliate',
+    title: 'FIF Affiliate Dashboard',
+    shortDescription:
+      'An affiliate management dashboard — referral tracking, partner accounts, and commission reporting.',
+    description:
+      'A dashboard for managing an affiliate programme end to end. Partners register, generate referral links, and track what those links earn; administrators approve accounts and review commission reporting. I built both sides: the React front end and the Node/Express API with Prisma over PostgreSQL, including authentication and the role split between partner and administrator.',
+    thumbnail: '/projects/fif.png',
+    contentImage: ['/projects/fif.png', '/projects/fif2.png'],
+    coverImage: '/projects/fif.png',
+    category: 'Dashboard',
+    status: 'in-progress',
+    featured: true,
+    featuredOrder: 5,
+    year: '2026',
+    role: 'Fullstack Developer',
+    duration: '2026',
+    teamSize: 4,
+    techStack: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Prisma', 'Tailwind CSS'],
+    tags: ['dashboard', 'fullstack', 'auth'],
+    links: { website: 'https://fif-affliate.vercel.app/' },
+    color: 'blue',
+  },
+  {
+    id: 'prj-05',
+    slug: 'ceo-suite',
+    title: 'CEO Suite',
+    shortDescription:
+      'An office room booking system with real-time scheduling, reservations, and conflict handling.',
+    description:
+      'A booking platform for serviced office spaces. The interesting problem is not the calendar, it is the conflicts: two people reserving the same room in the same minute, cancellations that need to free the slot immediately, and a schedule view that stays correct while other people are booking. I built the reservation flow, the scheduling logic behind it, and the containerised deployment.',
+    thumbnail: '/projects/CEO_SUITE_thumbnail.png',
+    contentImage: ['/projects/CEO_SUITE.png'],
+    coverImage: '/projects/CEO_SUITE.png',
+    category: 'Booking System',
+    status: 'live',
+    featured: true,
+    featuredOrder: 2,
+    year: '2026',
+    role: 'Fullstack Developer',
+    duration: '2026',
+    teamSize: 5,
+    techStack: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'Tailwind CSS'],
+    tags: ['booking', 'scheduling', 'fullstack'],
+    links: {},
+    color: 'teal',
+  },
+  {
+    id: 'prj-06',
+    slug: 'aralia-hris',
+    title: 'Aralia HRIS',
+    shortDescription:
+      'A human resources information system covering employee records, roles, and HR administration.',
+    description:
+      'An HRIS built for internal HR operations: employee records, organisational roles, and the administrative workflows around them. I worked on the front end in Vue 3 with Pinia for state — the hard part of an HRIS interface is that almost every screen is a dense form with permission rules attached, so the component layer has to make those rules obvious rather than hide them.',
+    thumbnail: '/projects/aralia_thumbnail.png',
+    contentImage: ['/projects/aralia.png', '/projects/aralia2.png'],
+    coverImage: '/projects/aralia.png',
+    category: 'HRIS',
+    status: 'live',
+    featured: true,
+    featuredOrder: 1,
+    year: '2025',
+    role: 'Frontend Developer',
+    duration: '2025',
+    teamSize: 5,
+    techStack: ['Vue 3', 'TypeScript', 'Pinia', 'Tailwind CSS', 'Vite'],
+    tags: ['hris', 'frontend', 'enterprise'],
+    links: {},
+    color: 'cyan',
+  },
+  {
+    id: 'prj-07',
+    slug: 'gcu-wms',
+    title: 'GCU Warehouse Management',
+    shortDescription:
+      'A warehouse management system for inventory, stock movement, and procurement workflows.',
+    description:
+      'A warehouse system covering inbound and outbound stock, inventory levels, and the procurement workflow around them. Warehouse software lives or dies on data density: operators need many rows on screen at once and cannot afford a mis-click, so the interface work was mostly about tables, keyboard flow, and unambiguous state.',
+    thumbnail: '/projects/roda2.png',
+    contentImage: ['/projects/roda2.png'],
+    coverImage: '/projects/roda2.png',
+    category: 'Warehouse Management',
+    status: 'live',
+    featured: false,
+    year: '2025',
+    role: 'Frontend Developer',
+    techStack: ['Vue', 'Laravel', 'MySQL'],
+    tags: ['warehouse', 'inventory', 'frontend'],
+    links: {},
+    color: 'orange',
+  },
+  {
+    id: 'prj-08',
+    slug: 'tanito-wms',
+    title: 'Tanito Warehouse Management',
+    shortDescription:
+      'A second warehouse management build — stock control and operational reporting.',
+    description:
+      'A warehouse management system for stock control and day-to-day operational reporting. Built on the same Vue and Laravel stack as the GCU system, which meant patterns established there — table behaviour, form validation, permission handling — carried straight across.',
+    thumbnail: thumb('tanito-wms'),
+    contentImage: [cover('tanito-wms')],
+    coverImage: cover('tanito-wms'),
+    category: 'Warehouse Management',
+    status: 'live',
+    featured: false,
+    year: '2024',
+    role: 'Frontend Developer',
+    techStack: ['Vue', 'Laravel', 'MySQL'],
+    tags: ['warehouse', 'inventory', 'frontend'],
+    links: {},
+    color: 'teal',
+  },
+  {
+    id: 'prj-09',
+    slug: 'aloshop',
+    title: 'Aloshop',
+    shortDescription:
+      'An e-commerce platform — catalogue, cart, checkout, and order management.',
+    description:
+      'A full e-commerce build: product catalogue, cart, checkout, and the order management behind it. I worked across the stack, from the storefront in React to the Node API and the Prisma schema over PostgreSQL. Commerce is unforgiving about state — a cart that disagrees with the server is a lost order — so most of the care went into keeping client and server in agreement.',
+    thumbnail: '/projects/aloshop.png',
+    contentImage: ['/projects/aloshop.png', '/projects/aloshop2.png', '/projects/aloshop3.png', '/projects/aloshop4.png'],
+    coverImage: '/projects/aloshop.png',
+    category: 'E-Commerce',
+    status: 'in-progress',
+    featured: false,
+    year: '2026',
+    role: 'Fullstack Developer',
+    techStack: ['React', 'Node.js', 'PostgreSQL', 'Prisma', 'Tailwind CSS'],
+    tags: ['ecommerce', 'fullstack', 'checkout'],
+    links: { website: 'https://aloshop.vercel.app/' },
+    color: 'pink',
+  },
+  {
+    id: 'prj-10',
+    slug: 'simbadda',
+    title: 'Simbadda',
+    shortDescription:
+      'A branded e-commerce storefront with product catalogue and order flow.',
+    description:
+      'A storefront for a consumer electronics brand: catalogue, product detail, cart, and the order pipeline behind them. Built full stack on React with a Node and Prisma backend, sharing the commerce patterns established on Aloshop rather than starting from scratch.',
+    thumbnail: '/projects/simbadda.png',
+    contentImage: ['/projects/simbadda.png', '/projects/simbadda2.png'],
+    coverImage: '/projects/simbadda.png',
+    category: 'E-Commerce',
+    status: 'in-progress',
+    featured: false,
+    year: '2026',
+    role: 'Fullstack Developer',
+    techStack: ['React', 'Node.js', 'PostgreSQL', 'Prisma', 'Tailwind CSS'],
+    tags: ['ecommerce', 'fullstack', 'storefront'],
+    links: { website: 'https://simbadda.vercel.app/' },
+    color: 'brand',
+  },
+  {
+    id: 'prj-11',
+    slug: 'supermall-karawaci',
+    title: 'Supermall Karawaci Membership',
+    shortDescription:
+      'A membership platform for a shopping mall — registration, member tiers, and rewards.',
+    description:
+      'A proof-of-concept membership platform for a shopping mall: member registration, tiers, and the rewards attached to them. The front end had to work for shoppers on a phone in a mall — one hand, poor signal, no patience — which shaped every layout and interaction decision.',
+    thumbnail: '/projects/simbadda.png',
+    contentImage: ['/projects/simbadda.png', '/projects/simbadda2.png'],
+    coverImage: '/projects/simbadda.png',
+    category: 'Membership',
+    status: 'in-progress',
+    featured: false,
+    year: '2026',
+    role: 'Frontend Developer',
+    techStack: ['React', 'TypeScript', 'Tailwind CSS'],
+    tags: ['membership', 'frontend', 'mobile-first'],
+    links: { website: 'https://poc-karawaci.vercel.app/' },
+    color: 'cyan',
+  },
+  {
+    id: 'prj-12',
+    slug: 'roda2',
+    title: 'Roda2 E-Commerce',
+    shortDescription:
+      'An automotive e-commerce platform covering ordering, pricing, and inventory.',
+    description:
+      'An e-commerce platform for the automotive market, handling ordering, pricing rules, and inventory. Automotive parts carry compatibility constraints that generic commerce software does not model well, so much of the front-end work was about surfacing those constraints before a customer orders the wrong part.',
+    thumbnail: '/projects/roda2.png',
+    contentImage: ['/projects/roda2.png'],
+    coverImage: '/projects/roda2.png',
+    category: 'E-Commerce',
+    status: 'in-progress',
+    featured: false,
+    year: '2024',
+    role: 'Frontend Developer',
+    techStack: ['Vue', 'Laravel', 'MySQL'],
+    tags: ['ecommerce', 'automotive', 'frontend'],
+    links: {},
+    color: 'blue',
+  },
+{
+  id: 'prj-13',
+  slug: 'searah',
+  title: 'Searah',
+  shortDescription:
+    'Corporate website for Searah, a strategic upstream energy joint venture between Eni and PETRONAS.',
+  description:
+    'A modern corporate website developed for Searah to showcase the company profile, leadership, operations, and strategic partnership between Eni and PETRONAS. I implemented responsive interfaces, optimized performance, and built reusable React components while ensuring the site aligned with the company’s enterprise branding.',
+  thumbnail: '/projects/searah_thumbnail.png',
+  contentImage: ['/projects/searah.png', '/projects/searah2.png', '/projects/searah3.png', '/projects/searah4.png'],
+  coverImage: '/projects/searah.png',
+  category: 'Corporate Website',
+  status: 'live',
+  featured: true,
+  featuredOrder: 8,
+  year: '2026',
+  role: 'Frontend Developer',
+  duration: '2026',
+  teamSize: 4,
+  techStack: [
+    'React',
+    'TypeScript',
+    'Tailwind CSS',
+    'Vite'
+  ],
+  tags: ['corporate', 'energy', 'frontend'],
+  links: {},
+  color: 'brand',
+},
+{
+  id: 'prj-14',
+  slug: 'kamitolong',
+  title: 'KamiTolong',
+  shortDescription:
+    'A digital platform for advertising and discovering professional services.',
+  description:
+    'KamiTolong is a service marketplace that connects customers with professional service providers across various categories. Users can browse service listings, compare providers, publish advertisements, and connect directly with businesses or freelancers. I developed the frontend application with a strong focus on responsive design, intuitive navigation, and a seamless user experience.',
+  thumbnail: '/projects/kamitolong.png',
+  contentImage: ['/projects/kamitolong.png', '/projects/kamitolong2.png'],
+  coverImage: '/projects/kamitolong.png',
+  category: 'Service Marketplace',
+  status: 'live',
+  featured: false,
+  year: '2025',
+  role: 'Frontend Developer',
+  techStack: [
+    'Vue 3',
+    'TypeScript',
+    'Tailwind CSS',
+    'Laravel'
+  ],
+  tags: ['donation', 'charity', 'frontend'],
+  links: {},
+  color: 'teal',
+},
+{
+  id: 'prj-15',
+  slug: 'petrokimia',
+  title: 'Petrokimia',
+  shortDescription:
+    'Enterprise dashboard for operational reporting and business process management.',
+  description:
+    'An internal enterprise application developed to support operational reporting and business workflows. The project focused on presenting complex business data through dashboards while maintaining performance, usability, and responsive layouts.',
+  thumbnail: '/projects/petrokimia.png',
+  contentImage: ['/projects/petrokimia.png'],
+  coverImage: '/projects/petrokimia.png',
+  category: 'Enterprise Dashboard',
+  status: 'live',
+  featured: false,
+  year: '2025',
+  role: 'Frontend Developer',
+  techStack: [
+    'Vue 3',
+    'TypeScript',
+    'Laravel',
+    'MySQL'
+  ],
+  tags: ['dashboard', 'enterprise', 'reporting'],
+  links: {},
+  color: 'blue',
+},
+{
+  id: 'prj-16',
+  slug: 'paska',
+  title: 'Paska',
+  shortDescription:
+    'Corporate website and digital presence for a business services company.',
+  description:
+    'A responsive corporate website designed to strengthen the company’s digital presence. The project focused on presenting services, company information, and contact channels with a clean and modern interface.',
+  thumbnail: '/projects/paska.png',
+  contentImage: ['/projects/paska.png'],
+  coverImage: '/projects/paska.png',
+  category: 'Corporate Website',
+  status: 'live',
+  featured: false,
+  year: '2025',
+  role: 'Frontend Developer',
+  techStack: [
+    'React',
+    'TypeScript',
+    'Tailwind CSS'
+  ],
+  tags: ['corporate', 'website'],
+  links: {},
+  color: 'cyan',
+},
+{
+  id: 'prj-17',
+  slug: 'xl-axiata',
+  title: 'XL Axiata',
+  shortDescription:
+    'Enterprise dashboard for monitoring and operational management.',
+  description:
+    'A web-based enterprise dashboard built to support operational monitoring and internal business processes. The application provides data visualization, reporting features, and responsive interfaces for internal users.',
+  thumbnail: '/projects/xl-axiata.png',
+  contentImage: ['/projects/xl-axiata.png'],
+  coverImage: '/projects/xl-axiata.png',
+  category: 'Enterprise Dashboard',
+  status: 'live',
+  featured: false,
+  year: '2025',
+  role: 'Frontend Developer',
+  techStack: [
+    'Vue 3',
+    'TypeScript',
+    'Laravel'
+  ],
+  tags: ['dashboard', 'enterprise'],
+  links: {},
+  color: 'brand',
+},
+{
+  id: 'prj-18',
+  slug: 'ticketing',
+  title: 'Ticketing Platform',
+  shortDescription:
+    'Online event ticketing platform with booking and payment workflows.',
+  description:
+    'A digital ticketing platform allowing users to browse events, purchase tickets, and manage bookings. The application emphasizes smooth checkout flows, responsive UI, and secure transaction handling.',
+  thumbnail: '/projects/ticketing.png',
+  contentImage: ['/projects/ticketing.png'],
+  coverImage: '/projects/ticketing.png',
+  category: 'Ticketing',
+  status: 'in-progress',
+  featured: false,
+  year: '2026',
+  role: 'Frontend Developer',
+  techStack: [
+    'React',
+    'TypeScript',
+    'Tailwind CSS'
+  ],
+  tags: ['ticketing', 'booking'],
+  links: {},
+  color: 'orange',
+},
+{
+  id: 'prj-19',
+  slug: 'topup',
+  title: 'TopUp Platform',
+  shortDescription:
+    'Digital top-up platform for games, e-wallets, and prepaid services.',
+  description:
+    'A web application enabling users to purchase digital products including game vouchers, prepaid credits, and e-wallet top-ups. The project focused on user experience, transaction flow, and responsive interfaces.',
+  thumbnail: '/projects/ticketing.png',
+  contentImage: ['/projects/ticketing.png'],
+  coverImage: '/projects/ticketing.png',
+  category: 'Digital Commerce',
+  status: 'in-progress',
+  featured: false,
+  year: '2026',
+  role: 'Frontend Developer',
+  techStack: [
+    'React',
+    'TypeScript',
+    'Tailwind CSS'
+  ],
+  tags: ['commerce', 'payment'],
+  links: {},
+  color: 'pink',
+},
+{
+  id: 'prj-20',
+  slug: 'starcom',
+  title: 'Starcom',
+  shortDescription:
+    'Corporate website and digital platform for business services.',
+  description:
+    'A modern corporate website built to showcase company services, strengthen online presence, and provide an engaging user experience across desktop and mobile devices.',
+  thumbnail: '/projects/starcom.png',
+  contentImage: ['/projects/starcom.png', '/projects/starcom2.png', '/projects/starcom3.png', '/projects/starcom4.png'],
+  coverImage: '/projects/starcom.png',
+  category: 'Corporate Website',
+  status: 'live',
+  featured: false,
+  year: '2025',
+  role: 'Frontend Developer',
+  techStack: [
+    'React',
+    'TypeScript',
+    'Tailwind CSS'
+  ],
+  tags: ['corporate', 'website'],
+  links: { website: 'https://www.starcomindo.com/' },
+  color: 'teal',
+}
+];
+
+export const projectCategories = [
+  'All',
+  ...Array.from(new Set(projects.map((project) => project.category))),
+] as const;
+
+/**
+ * Featured work, top to bottom. Change a project's `featuredOrder` to move it —
+ * lower numbers surface first, and anything left unnumbered trails behind them
+ * in declaration order.
+ */
+export const featuredProjects = projects
+  .filter((project) => project.featured)
+  .sort(
+    (a, b) =>
+      (a.featuredOrder ?? Number.MAX_SAFE_INTEGER) - (b.featuredOrder ?? Number.MAX_SAFE_INTEGER),
+  );
