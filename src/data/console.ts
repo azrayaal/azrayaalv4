@@ -98,8 +98,12 @@ export const statusLabel: Record<Project['status'], string> = {
   concept: 'Concept',
 };
 
+// Projects with a dedicated cover art lead; the rest follow, newest first.
+const hasCover = (p: Project) => Number(p.thumbnail.startsWith('/projects/cover/'));
+
 export const projectsByYear = [...projects].sort(
-  (a, b) => Number(b.year) - Number(a.year) || a.title.localeCompare(b.title),
+  (a, b) =>
+    hasCover(b) - hasCover(a) || Number(b.year) - Number(a.year) || a.title.localeCompare(b.title),
 );
 
 // ── Home content row ─────────────────────────────────────────────────────
