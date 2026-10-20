@@ -1,12 +1,12 @@
 <script setup lang="ts">
-/** Face-button glyphs: ✕ blue, ○ red, △ green, □ pink — plus the Options pill. */
+/** Button glyphs: ✕/○ render as Enter/Esc keycaps, △ green, □ pink — plus the Options pill. */
 defineProps<{ button: 'cross' | 'circle' | 'triangle' | 'square' | 'options' | 'dpad' }>();
 </script>
 
 <template>
   <span class="glyph" :class="`glyph--${button}`" aria-hidden="true">
-    <svg v-if="button === 'cross'" viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17" /></svg>
-    <svg v-else-if="button === 'circle'" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5.5" /></svg>
+    <span v-if="button === 'cross'" class="glyph__pill">ENTER</span>
+    <span v-else-if="button === 'circle'" class="glyph__pill">ESC</span>
     <svg v-else-if="button === 'triangle'" viewBox="0 0 24 24"><path d="M12 6.5l6 10.5H6z" /></svg>
     <svg v-else-if="button === 'square'" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" /></svg>
     <svg v-else-if="button === 'dpad'" viewBox="0 0 24 24">
@@ -34,11 +34,15 @@ defineProps<{ button: 'cross' | 'circle' | 'triangle' | 'square' | 'options' | '
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.glyph--cross svg { stroke: #2c6fe0; }
-.glyph--circle svg { stroke: #e2333e; }
 .glyph--triangle svg { stroke: #1aa587; }
 .glyph--square svg { stroke: #d35ca8; }
 .glyph--dpad svg { fill: #1b2a4a; stroke: none; padding: 2px; }
+.glyph--cross,
+.glyph--circle {
+  width: auto;
+  border-radius: 6px;
+  padding: 0 0.5em;
+}
 .glyph--options {
   width: auto;
   border-radius: 999px;

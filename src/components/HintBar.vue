@@ -1,7 +1,7 @@
 <script setup lang="ts">
 /**
  * Bottom-right button guide. Each hint is also a real button, so touch and
- * mouse users can press ○ Back or ✕ Select without a controller.
+ * mouse users can press Esc Back or Enter Select without a controller.
  */
 import Glyph from './Glyph.vue';
 import { dispatch, type Action } from '@/composables/useInput';
