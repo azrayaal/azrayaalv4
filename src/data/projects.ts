@@ -145,7 +145,7 @@ export const projects: Project[] = [
     description:
       'A booking platform for serviced office spaces. The interesting problem is not the calendar, it is the conflicts: two people reserving the same room in the same minute, cancellations that need to free the slot immediately, and a schedule view that stays correct while other people are booking. I built the reservation flow, the scheduling logic behind it, and the containerised deployment.',
     thumbnail: '/projects/cover/ceo-cover.png',
-    contentImage: ['/projects/CEO_SUITE.png'],
+    contentImage: ['/projects/CEO_SUITE.png', '/projects/CEO_SUITE2.png', '/projects/CEO_SUITE3.jpeg', '/projects/CEO_SUITE4.jpeg'],
     coverImage: '/projects/CEO_SUITE.png',
     category: 'Booking System',
     status: 'live',
@@ -169,7 +169,7 @@ export const projects: Project[] = [
     description:
       'An HRIS built for internal HR operations: employee records, organisational roles, and the administrative workflows around them. I worked on the front end in Vue 3 with Pinia for state — the hard part of an HRIS interface is that almost every screen is a dense form with permission rules attached, so the component layer has to make those rules obvious rather than hide them.',
     thumbnail: '/projects/cover/aralia-cover.png',
-    contentImage: ['/projects/aralia.png', '/projects/aralia2.png'],
+    contentImage: ['/projects/aralia.png', '/projects/aralia2.png', '/projects/aralia3.png', '/projects/aralia4.jpeg', '/projects/aralia5.jpeg'],
     coverImage: '/projects/aralia.png',
     category: 'HRIS',
     status: 'live',
@@ -192,7 +192,7 @@ export const projects: Project[] = [
       'A warehouse management system for inventory, stock movement, and procurement workflows.',
     description:
       'A warehouse system covering inbound and outbound stock, inventory levels, and the procurement workflow around them. Warehouse software lives or dies on data density: operators need many rows on screen at once and cannot afford a mis-click, so the interface work was mostly about tables, keyboard flow, and unambiguous state.',
-    thumbnail: '/projects/roda2.png',
+    thumbnail: '/projects/cover/gcu-cover.png',
     contentImage: ['/projects/roda2.png'],
     coverImage: '/projects/roda2.png',
     category: 'Warehouse Management',
@@ -320,7 +320,11 @@ export const projects: Project[] = [
   description:
     'A modern corporate website developed for Searah to showcase the company profile, leadership, operations, and strategic partnership between Eni and PETRONAS. I implemented responsive interfaces, optimized performance, and built reusable React components while ensuring the site aligned with the company’s enterprise branding.',
   thumbnail: '/projects/cover/searah-cover.png',
-  contentImage: ['/projects/searah.png', '/projects/searah2.png', '/projects/searah3.png', '/projects/searah4.png'],
+  contentImage: [
+    '/projects/searah.png', '/projects/searah2.png', '/projects/searah3.png', '/projects/searah4.png',
+    '/projects/searah5.png', '/projects/searah6.png', '/projects/searah7.png', '/projects/searah8.png',
+    '/projects/searah9.png', '/projects/searah10.png',
+  ],
   coverImage: '/projects/searah.png',
   category: 'Corporate Website',
   status: 'live',
@@ -348,8 +352,11 @@ export const projects: Project[] = [
     'A digital platform for advertising and discovering professional services.',
   description:
     'KamiTolong is a service marketplace that connects customers with professional service providers across various categories. Users can browse service listings, compare providers, publish advertisements, and connect directly with businesses or freelancers. I developed the frontend application with a strong focus on responsive design, intuitive navigation, and a seamless user experience.',
-  thumbnail: '/projects/kamitolong.png',
-  contentImage: ['/projects/kamitolong.png', '/projects/kamitolong2.png'],
+  thumbnail: '/projects/cover/kamitolong-cover.png',
+  contentImage: [
+    '/projects/kamitolong.png', '/projects/kamitolong2.png', '/projects/kamitolong3.png',
+    '/projects/kamitolong4.png', '/projects/kamitolong5.jpeg', '/projects/kamitolong6.jpeg',
+  ],
   coverImage: '/projects/kamitolong.png',
   category: 'Service Marketplace',
   status: 'live',
@@ -374,7 +381,7 @@ export const projects: Project[] = [
     'Enterprise dashboard for operational reporting and business process management.',
   description:
     'An internal enterprise application developed to support operational reporting and business workflows. The project focused on presenting complex business data through dashboards while maintaining performance, usability, and responsive layouts.',
-  thumbnail: '/projects/petrokimia.png',
+  thumbnail: '/projects/cover/petrokimia-cover.png',
   contentImage: ['/projects/petrokimia.png'],
   coverImage: '/projects/petrokimia.png',
   category: 'Enterprise Dashboard',
@@ -516,6 +523,27 @@ export const projects: Project[] = [
   tags: ['corporate', 'website'],
   links: { website: 'https://www.starcomindo.com/' },
   color: 'teal',
+},
+{
+  id: 'prj-21',
+  slug: 'abang-gas',
+  title: 'AbangGas',
+  shortDescription:
+    'An on-demand delivery app for LPG, drinking water, and kitchen needs, plus PLN tokens, pulsa, and data top-ups.',
+  description:
+    'AbangGas delivers household essentials — LPG cylinders, gallon water, and kitchen staples — straight to the customer’s address, and doubles as a digital top-up hub for PLN electricity tokens, mobile credit, data packages, and e-materai. The app covers the full order flow: address-based delivery, product catalogue, weekly vouchers and promos, checkout, and transaction history.',
+  thumbnail: '/projects/cover/abanggas-cover.png',
+  contentImage: ['/projects/abanggas.jpeg', '/projects/abanggas2.jpeg', '/projects/abanggas3.jpeg'],
+  coverImage: '/projects/abanggas.jpeg',
+  category: 'Digital Commerce',
+  status: 'live',
+  featured: false,
+  year: '2026',
+  role: 'Frontend Developer',
+  techStack: ['Flutter'],
+  tags: ['mobile', 'delivery', 'commerce'],
+  links: {},
+  color: 'blue',
 }
 ];
 
